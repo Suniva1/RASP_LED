@@ -1,0 +1,47 @@
+from tkinter import*
+import tkinter.font
+form gpioaero import LED
+impoirt RPi.GPIO
+RPi.GPIO.setmode(RPi.GPIO.BCM)
+
+ledred=LED(14)
+ledgreen= LED(15)
+ledblue= LED(18)
+
+win= Tk()
+win.title("LED TOggler")
+myFont= tkinter.font.Font(family="Helvetica", size=12, weight="bold")
+
+def ledToggle():
+  if ledred.is_lit:
+     led.off()
+     ledButton["text"]="Turn red LED on"
+  else:
+   ledred.on()
+     ledButton["text"]="Turn red LED off"
+
+  if ledgreen.is_lit:
+    led.off()
+    ledButton["text"]="Turn Green LED off"
+  else:
+   ledgreen.on()	
+    ledButton["text"]="Turn Green LED off"
+
+  if ledblue.is_lit:
+     led.off()
+     ledButton["text"]="Turn blue LED on"
+  else:
+   ledblue.on()
+     ledButton["text"]="Turn blue LED off"
+
+
+ledButton= Button(win, text= 'Turn red LED On',font=myFont, command=LedToggle,bg='bisque2',height= , width= 24)
+LedBUtton.grid(row=0,colum=1)
+
+ledButton= Button(win, text= 'Turn green LED On',font=myFont, command=LedToggle,bg='bisque2',height= , width= 24)
+LedBUtton.grid(row=1,colum=1)
+
+ledButton= Button(win, text= 'Turn blue LED On',font=myFont, command=LedToggle,bg='bisque2',height= , width= 24)
+LedBUtton.grid(row=2,colum=2)
+
+win.protocol("WM_DELETE_WINDOW",close) # exit cleanly
